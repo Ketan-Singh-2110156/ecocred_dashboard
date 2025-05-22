@@ -15,11 +15,9 @@ with st.spinner("Fetching prediction data..."):
         predictions = data["prediction"]
         all_values = inputs + predictions
 
-        # Generate timestamps
         now = datetime.now()
         timestamps = [now - timedelta(minutes=2), now - timedelta(minutes=1), now, now + timedelta(minutes=1), now + timedelta(minutes=2)]
 
-        # Create DataFrame
         df = pd.DataFrame({
             "Timestamp": timestamps,
             "CO₂ Value": all_values
